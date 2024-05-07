@@ -1,2 +1,0 @@
-projectETS Integrasi sistem
-mongodb+srv://admin:admin@etsis.6uhepml.mongodb.net/
