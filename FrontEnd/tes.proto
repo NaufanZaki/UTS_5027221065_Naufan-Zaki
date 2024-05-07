@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+// Pesan untuk menyimpan teks
+message TextMessage {
+  string id = 1; // ID unik untuk teks
+  string content = 2; // Isi teks
+}
+
+// Pesan untuk menyimpan item daftar
+message ListItem {
+  string id = 1; // ID unik untuk item daftar
+  string content = 2; // Isi item daftar
+  bool isDone = 3; // Status item daftar (selesai atau belum)
+}
+
+// Pesan untuk menyimpan daftar
+message ListMessage {
+  string id = 1; // ID unik untuk daftar
+  repeated ListItem items = 2; // Item-item daftar
+}
+
+// Pesan untuk menyimpan data yang ditambahkan dari website sebelumnya
+message WebsiteData {
+  repeated TextMessage texts = 1; // Daftar teks
+  repeated ListMessage lists = 2; // Daftar daftar
+}

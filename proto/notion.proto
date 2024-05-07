@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package notionClonePackage;
+
+service NotionService {
+  rpc GetAllPages (Empty) returns (Pages) {};
+  rpc GetPageByID (PageID) returns (Page) {};
+  rpc AddPage (Page) returns (Response) {};
+  rpc UpdatePage (PageWithID) returns (Response) {};
+  rpc DeletePage (PageID) returns (Response) {};
+}
+
+message Page {
+  string title = 1;
+  string content = 2;
+  string tags = 3;
+}
+
+message PageID {
+  string id = 1;
+}
+
+message Pages {
+  repeated Page pages = 1;
+}
+
+message PageWithID {
+  PageID pageId = 1;
+  Page page = 2;
+}
+
+message Response {
+  string responseMsg = 1;
+  int32 code = 2;
+  string pageId = 3;
+  Page pages = 4;
+}
+
+message Empty {}
